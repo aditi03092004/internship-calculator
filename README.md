@@ -260,3 +260,4 @@ The project includes unit and widget tests covering:
 - **Repository**: [internship-calculator](https://github.com/aditi03092004/internship-calculator)
 - **Project**: Tip Calculator (Flutter Mobile Application)
 - **Submission Type**: Official Internship Project Submission
+

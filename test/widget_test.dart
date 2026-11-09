@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tip_calculator/main.dart';
-import 'package:tip_calculator/screens/tip_calculator_screen.dart';
 
 void main() {
   group('Tip Calculator Widget Tests', () {
     testWidgets('Renders all initial UI components properly',
         (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
       await tester.pumpWidget(const TipCalculatorApp());
       await tester.pumpAndSettle();
 
@@ -25,12 +31,19 @@ void main() {
       // Verify Default Calculation Values (Bill: 0, Tip: 10%, People: 1)
       expect(find.text('AMOUNT PER PERSON'), findsOneWidget);
       expect(find.text('₹0.00'), findsNWidgets(4)); // Bill, Tip, Total, Per Person all 0.00
-      expect(find.text('10%'), findsNWidgets(2)); // Badge and slider label / chip
+      expect(find.text('10%'), findsNWidgets(2)); // Badge and preset chip
       expect(find.text('1 Person'), findsOneWidget);
     });
 
     testWidgets('Calculates correct values with sample inputs (₹1000, 10%, 2 people)',
         (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
       await tester.pumpWidget(const TipCalculatorApp());
       await tester.pumpAndSettle();
 
@@ -62,6 +75,13 @@ void main() {
 
     testWidgets('Enforces minimum limit of 1 person',
         (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
       await tester.pumpWidget(const TipCalculatorApp());
       await tester.pumpAndSettle();
 
@@ -79,6 +99,13 @@ void main() {
 
     testWidgets('Reset button clears bill and resets controls to defaults',
         (WidgetTester tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
       await tester.pumpWidget(const TipCalculatorApp());
       await tester.pumpAndSettle();
 

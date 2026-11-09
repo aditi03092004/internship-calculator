@@ -158,7 +158,7 @@ class _ControlButton extends StatelessWidget {
       color: isEnabled ? AppTheme.surface : Colors.transparent,
       borderRadius: BorderRadius.circular(12),
       elevation: isEnabled ? 1 : 0,
-      shadowColor: Colors.black.withOpacity(0.08),
+      shadowColor: Colors.black.withValues(alpha: 0.08),
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadius.circular(12),
@@ -175,7 +175,7 @@ class _ControlButton extends StatelessWidget {
           child: Icon(
             icon,
             size: 22,
-            color: isEnabled ? AppTheme.primaryBlue : AppTheme.textSecondary.withOpacity(0.4),
+            color: isEnabled ? AppTheme.primaryBlue : AppTheme.textSecondary.withValues(alpha: 0.4),
           ),
         ),
       ),

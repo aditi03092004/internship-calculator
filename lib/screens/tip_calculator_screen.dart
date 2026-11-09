@@ -153,24 +153,27 @@ class _TipCalculatorScreenState extends State<TipCalculatorScreen> {
 
                   // Footer Badge for Internship Project
                   Center(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.verified_rounded,
-                          size: 16,
-                          color: AppTheme.primaryBlue.withOpacity(0.7),
-                        ),
-                        const SizedBox(width: 6),
-                        Text(
-                          'Tip Calculator • Material 3 • Flutter Internship',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: AppTheme.textSecondary.withOpacity(0.8),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.verified_rounded,
+                            size: 16,
+                            color: AppTheme.primaryBlue.withValues(alpha: 0.7),
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 6),
+                          Text(
+                            'Tip Calculator • Material 3 • Flutter Internship',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: AppTheme.textSecondary.withValues(alpha: 0.8),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),

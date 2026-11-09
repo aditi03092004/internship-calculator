@@ -30,12 +30,12 @@ class AppTheme {
   // Card Box Shadow for clean depth
   static List<BoxShadow> get cardShadow => [
         BoxShadow(
-          color: const Color(0xFF0F172A).withOpacity(0.04),
+          color: const Color(0xFF0F172A).withValues(alpha: 0.04),
           blurRadius: 16,
           offset: const Offset(0, 6),
         ),
         BoxShadow(
-          color: const Color(0xFF0F172A).withOpacity(0.02),
+          color: const Color(0xFF0F172A).withValues(alpha: 0.02),
           blurRadius: 4,
           offset: const Offset(0, 2),
         ),
@@ -44,7 +44,7 @@ class AppTheme {
   // Elevation shadow for the Hero Result Card
   static List<BoxShadow> get heroShadow => [
         BoxShadow(
-          color: primaryDark.withOpacity(0.28),
+          color: primaryDark.withValues(alpha: 0.28),
           blurRadius: 24,
           offset: const Offset(0, 10),
         ),
@@ -75,7 +75,7 @@ class AppTheme {
           letterSpacing: -0.5,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -88,7 +88,7 @@ class AppTheme {
         activeTrackColor: primaryBlue,
         inactiveTrackColor: primaryLight,
         thumbColor: primaryDark,
-        overlayColor: primaryBlue.withOpacity(0.12),
+        overlayColor: primaryBlue.withValues(alpha: 0.12),
         trackHeight: 6,
         thumbShape: const RoundSliderThumbShape(
           enabledThumbRadius: 10,
